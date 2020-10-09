@@ -1,7 +1,7 @@
 """
 参考于：https://zhuanlan.zhihu.com/p/84759645
 """
-def  merge(left, right):
+def merge(left, right):
     result = []
     while left and right:
         if left[0] < right[0]:
@@ -27,4 +27,4 @@ def merge_sort(numberlist):
 
 if __name__ == "__main__":
     nums = [5,3,7,2,4,1,8]
-    shell_sort(nums)
+    merge_sort(nums)

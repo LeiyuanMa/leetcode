@@ -1,4 +1,4 @@
-def permutation(str,start,end):
+def permutation(nums):
     """
     数组的全排列
     :param str:
@@ -6,15 +6,20 @@ def permutation(str,start,end):
     :param end:
     :return:
     """
-    if(start==end):
-        for s in str:
-            print(s,end='')
-        print('')
-        return
-    for i in range(start,end):
-        str[start],str[i]=str[i],str[start]
-        permutation(str,start+1,end)
-        str[start], str[i] = str[i], str[start]
+    res = list()
+    start = 0
+    end = len(nums)
+
+    def helper(nums, start,end):
+        if (start==end):
+            res.append(nums[:])
+            return
+        for i in range(start,end):
+            nums[start],nums[i]=nums[i],nums[start]
+            helper(nums,start+1,end)
+            nums[start], nums[i] = nums[i], nums[start]
+    helper(nums,start,end)
+    return res
 
 def permuteUnique(nums):
     """
@@ -88,8 +93,8 @@ def subsets_widthdup(nums):
     print(res)
     return res
 
-a=[1,2,2]
-# permutation(a,0,len(a))
-print(permuteUnique(a))
+a=[1,2,3]
+print(permutation(a))
+# print(permuteUnique(a))
 # subsets(a)
 # subsets_widthdup(a)
