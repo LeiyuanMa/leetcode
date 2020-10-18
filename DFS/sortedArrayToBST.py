@@ -1,5 +1,5 @@
 """
-由中序遍历恢复二叉树
+由中序遍历(从小到大的有序数组)恢复二叉树
 """
 # Definition for a binary tree node.
 class TreeNode:
