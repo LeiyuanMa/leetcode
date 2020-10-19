@@ -33,22 +33,22 @@ def combinationSum(candidates, target):
     :param target:
     :return:
     """
-    def dfs(candidates, begin, size, path, res, target):
+    def dfs(candidates, begin, path, res, target):
         if target == 0:
             res.append(path)
             return
 
-        for index in range(begin, size):
+        for index in range(begin,size):
             if candidates[index] > target:
                 continue
-            dfs(candidates, index, size, path + [candidates[index]], res, target - candidates[index])
+            dfs(candidates, index, path + [candidates[index]], res, target - candidates[index])
 
     size = len(candidates)
     if size == 0:
         return []
     path = []
     res = []
-    dfs(candidates, 0, size, path, res, target)
+    dfs(candidates, 0, path, res, target)
     return res
 
 def combinationSum2(candidates, target):
@@ -58,7 +58,7 @@ def combinationSum2(candidates, target):
     :param target:
     :return:
     """
-    def dfs(candidates, begin, size, path, res, target):
+    def dfs(candidates, begin, path, res, target):
         if target == 0:
             res.append(path)
             return
@@ -68,7 +68,7 @@ def combinationSum2(candidates, target):
                 continue
             if index > begin and candidates[index - 1] == candidates[index]:
                 continue
-            dfs(candidates, index+1, size, path + [candidates[index]], res, target - candidates[index])
+            dfs(candidates, index+1, path + [candidates[index]], res, target - candidates[index])
 
     size = len(candidates)
     if size == 0:
@@ -76,7 +76,7 @@ def combinationSum2(candidates, target):
     path = []
     res = []
     candidates.sort()
-    dfs(candidates, 0, size, path, res, target)
+    dfs(candidates, 0, path, res, target)
     return res
 
 def combinationSum3(target, k):
@@ -107,5 +107,5 @@ def combinationSum3(target, k):
 
 # print(combine(4, 2))
 # print(combinationSum([2,3,6,7],7))
-# print(combinationSum2([10,1,2,7,6,1,5],8))
-print(combinationSum3(9,3))
+print(combinationSum2([10,1,2,7,6,1,5],8))
+# print(combinationSum3(9,3))
