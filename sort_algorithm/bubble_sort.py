@@ -11,4 +11,4 @@ def bubble_sort(numberlist):
 
 if __name__ == "__main__":
     nums = [3,5,7,2,4,1,8]
-    bubble_sort(nums)
+    print(bubble_sort(nums))

@@ -7,7 +7,7 @@ def add(a,b):
     return a
 
 if __name__ == "__main__":
-    a = 1
-    b = 1
+    a = 11
+    b = 3
 
     print(add(a,b))

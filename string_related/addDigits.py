@@ -18,6 +18,6 @@ def addDigits(num):
         return num % 9
 
 if __name__ == "__main__":
-    a = 11
+    a = 101
 
     print(addDigits(a))

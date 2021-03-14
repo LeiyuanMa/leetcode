@@ -17,7 +17,7 @@ def rand7():
     return x % 7+1
 
 def randn(n):
-    return randint(1,5)
+    return randint(1,n)
 def randn2(n):
     return n*(randn(n)-1)+randn(n)
 

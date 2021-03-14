@@ -7,7 +7,7 @@ def deleteNode(head,val):
     pre, cur = head, head.next
     while cur and cur.val != val:
         pre, cur = cur, cur.next
-    # 若 cur 指向 nullnull ，代表链表中不包含值为 val 的节点
+    # 若 cur 指向 null ，代表链表中不包含值为 val 的节点
     if cur:
         pre.next = cur.next
     return head

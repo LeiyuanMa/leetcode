@@ -13,4 +13,4 @@ def reverseWords(s):
 
 if __name__ == "__main__":
     str = "hello world good morning"
-    reverseWords(str)
+    print(reverseWords(str))

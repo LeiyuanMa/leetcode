@@ -39,8 +39,8 @@ def permuteUnique(nums):
         for i in range(len(nums)):
             if check[i] == 1:
                 continue
-            if nums[i] == nums[i - 1] and check[i - 1] == 0:
-                continue
+            # if nums[i] == nums[i - 1] and check[i - 1] == 0:
+            #     continue
             check[i] = 1
             backtrack(sol + [nums[i]], nums, check)
             check[i] = 0
@@ -93,8 +93,8 @@ def subsets_widthdup(nums):
     print(res)
     return res
 
-a=[1,2,3]
-print(permutation(a))
+a=[1,2,2,3]
+# print(permutation(a))
 # print(permuteUnique(a))
 # subsets(a)
-# subsets_widthdup(a)
+subsets_widthdup(a)

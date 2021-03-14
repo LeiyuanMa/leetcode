@@ -9,11 +9,11 @@ def prefixesDivBy5(A):
     # 初始为0，0*2+num[0]开始
     tsum=0
     for i,num in enumerate(A):
-        tsum=(tsum*2+num)%5
+        tsum=(tsum*2+num)
         A[i]=(tsum%5==0)
     return A
 
 if __name__ == "__main__":
-    a = 22
+    a = [0,1,1,1,1,1]
 
-    print(binaryGap(a))
+    print(prefixesDivBy5(a))
