@@ -38,7 +38,8 @@ def levelOrder(root):
     return res
 
 if __name__ == '__main__':
-    pre_order = [1, 2, 4, 7, 3, 5, 6, 8]
-    mid_order = [4, 7, 2, 1, 5, 3, 8, 6]
+    pre_order = [3,9,20,15,7]
+    mid_order = [9,3,15,20,7]
     root = construct_tree(pre_order, mid_order)
+    t=1
     # print(levelOrder(root))

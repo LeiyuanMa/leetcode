@@ -22,7 +22,10 @@ def preOrderTraversal(root):
             temp = temp.left
         if stack:
             temp = stack.pop()
-            temp = temp.right
+            # 这里可以打印单一的子叶子节点
+            temp, tmp_left = temp.right, temp.left
+            if (not temp) ^ (not tmp_left):
+                result.append(None)
     return result
 
 def inOrderTraversal(root):
@@ -54,17 +57,18 @@ def postOrderTraversalV1(root):
             temp = temp.right
         if stack:
             temp = stack.pop()
-            temp = temp.left
+            # 这里可以打印单一的子叶子节点
+            temp,tmp_right = temp.left, temp.right
+            if (not temp) ^ (not tmp_right):
+                result.append(None)
     result.reverse()
     return result
 
-left_node = Node(2)
-right = Node(3)
-left_node.left = Node(4)
-left_node.right = Node(5)
-
-root = Node(1)
+left_node = Node(1)
+right = Node(4)
+right.left = Node(3)
+right.right = Node(6)
+root = Node(5)
 root.left = left_node
 root.right = right
-
 print(inOrderTraversal(root))

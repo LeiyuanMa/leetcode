@@ -1,4 +1,9 @@
+#O(n)复杂度，
 def function_partion(lists, left, right):
+    """
+    该方法返回一个index，能够保证index位置的数是已排序完成的，
+    在index左边的数都比index所在的数小，在index右边的数都比index所在的数大。
+    """
     # 划分函数处理部分
     key = lists[left]
     while left < right:
@@ -45,7 +50,7 @@ def GetLeastK(lists,k):
 
 
 
-lists = [4,5,2,1,2,2,2,2,3]
-print("思路(划分法):", MorethanHalf(lists))
-# lists = [4,5,1,6,2,7,3,8]
-# GetLeastK(lists,4)
+# lists = [4,5,2,1,2,2,2,2,3]
+# print("思路(划分法):", MorethanHalf(lists))
+lists = [4,5,1,6,2,7,3,8]
+GetLeastK(lists,4)

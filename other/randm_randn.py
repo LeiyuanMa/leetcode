@@ -23,7 +23,7 @@ def randn2(n):
 
 def randm(m,n):
     x = float('inf')
-    while(x>m*(n*n/m)):
+    while(x>m*(n*n//m)):
         x = randn2(n)
 
     return x%m + 1

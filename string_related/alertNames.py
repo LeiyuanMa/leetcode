@@ -21,4 +21,4 @@ def alertNames(keyName, keyTime):
 if __name__ == "__main__":
     keyName = ["daniel", "daniel", "daniel", "luis", "luis", "luis", "luis"]
     keyTime = ["10:00", "10:40", "11:00", "09:00", "11:00", "13:00", "15:00"]
-    alertNames(keyName,keyTime)
+    print(alertNames(keyName,keyTime))

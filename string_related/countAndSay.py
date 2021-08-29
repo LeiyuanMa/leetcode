@@ -4,10 +4,10 @@ def countAndSay(n):
     s = countAndSay(n - 1)
 
     i, res = 0, ''
-    for j, c in enumerate(s):
-        if c != s[i]:
-            res += str(j - i) + s[i]
-            i = j
+    for index, current_value in enumerate(s):
+        if current_value != s[i]:
+            res += str(index - i) + s[i]
+            i = index
     res += str(len(s) - i) + s[-1]  # 最后一个元素莫忘统计
     return res
 

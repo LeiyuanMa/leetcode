@@ -105,7 +105,23 @@ def combinationSum3(target, k):
     dfs(candidates, 0, size, path, res, target)
     return res
 
-# print(combine(4, 2))
+print(combine(3, 2))
 # print(combinationSum([2,3,6,7],7))
-print(combinationSum2([10,1,2,7,6,1,5],8))
+# print(combinationSum2([10,1,2,7,6,1,5],8))
 # print(combinationSum3(9,3))
+
+
+def subsets( nums):
+    result = list()
+    n = len(nums)
+
+    def backtrace(index, tmp):
+        result.append(tmp[:])
+        print(result)
+        for j in range(index, n):
+            backtrace(j + 1, tmp + [nums[j]])
+
+    backtrace(0, [])
+    return result
+
+subsets([1,2,3])

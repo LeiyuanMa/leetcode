@@ -12,4 +12,4 @@ def searchInsert(nums, target):
 if __name__ == "__main__":
     s = [1,3,5,6]
     t = 5
-    searchInsert(s,t)
+    print(searchInsert(s,t))

@@ -14,5 +14,5 @@ class NumArray:
 if __name__ == "__main__":
     nums = [-2, 0, 3, -5, 2, -1]
     obj = NumArray(nums)
-    result = obj.sumRange(0,2)
+    result = obj.sumRange(2,4)
     print(result)

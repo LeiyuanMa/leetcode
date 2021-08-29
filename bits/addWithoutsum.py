@@ -1,6 +1,6 @@
 def add(a,b):
     while b != 0:
-        sum = a ^ b
+        sum = a ^ b # 按位异或
         carry = (a&b) << 1
         a = sum
         b = carry
