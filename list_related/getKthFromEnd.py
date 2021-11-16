@@ -21,19 +21,15 @@ t2.next = t3
 head.next = t2
 
 def getKthFromEnd(head, k):
-    dummy = Node(0)
-    dummy.next = head
-    first = head
-    second = dummy
-    for i in range(k):
-        first = first.next
+    fast, slow = head, head
 
-    while first:
-        first = first.next
-        second = second.next
+    while fast and k > 0:
+        fast, k = fast.next, k - 1
+    while fast:
+        fast, slow = fast.next, slow.next
 
-    second.next = second.next.next
-    return dummy.next
+    return slow
+
 
 result = getKthFromEnd(head, 2)
 t=1

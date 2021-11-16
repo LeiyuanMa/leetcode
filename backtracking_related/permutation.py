@@ -1,4 +1,4 @@
-def permutation(nums):
+def permutation(s):
     """
     数组的全排列
     :param str:
@@ -6,20 +6,27 @@ def permutation(nums):
     :param end:
     :return:
     """
+    used = [False] * len(s)
+    s = sorted(s)
     res = list()
-    start = 0
-    end = len(nums)
 
-    def helper(nums, start,end):
-        if (start==end):
-            res.append(nums[:])
+    def dfs(s, used, path):
+        if len(path) == len(s):
+            res.append("".join(path[:]))
             return
-        for i in range(start,end):
-            nums[start],nums[i]=nums[i],nums[start]
-            helper(nums,start+1,end)
-            nums[start], nums[i] = nums[i], nums[start]
-    helper(nums,start,end)
+        for i in range(len(s)):
+            if i > 0 and s[i] == s[i - 1] and not used[i - 1]:
+                continue
+            if not used[i]:
+                path.append(s[i])
+                used[i] = True
+                dfs(s, used, path)
+                used[i] = False
+                path.pop()
+
+    dfs(s, used, list())
     return res
+
 
 def permuteUnique(nums):
     """
@@ -39,8 +46,9 @@ def permuteUnique(nums):
         for i in range(len(nums)):
             if check[i] == 1:
                 continue
-            # if nums[i] == nums[i - 1] and check[i - 1] == 0:
-            #     continue
+            # nums = [1],nums = [1,1] 需要限制i>0
+            if i > 0 and nums[i] == nums[i - 1] and check[i - 1] == 0:
+                continue
             check[i] = 1
             backtrack(sol + [nums[i]], nums, check)
             check[i] = 0
@@ -94,7 +102,7 @@ def subsets_widthdup(nums):
     return res
 
 a=[1,2,2,3]
-# print(permutation(a))
+print(permutation(a))
 # print(permuteUnique(a))
 # subsets(a)
-subsets_widthdup(a)
+# subsets_widthdup(a)

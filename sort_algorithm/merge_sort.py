@@ -6,7 +6,7 @@ nixushu = 0
 def merge(left, right):
     result = []
     while left and right:
-        if left[0] < right[0]:
+        if left[0] <= right[0]:  # 如果输入的数组有重复数字的时候
             result.append(left.pop(0))
         else:
             global nixushu
@@ -30,6 +30,6 @@ def merge_sort(numberlist):
     return merge(left, right)
 
 if __name__ == "__main__":
-    nums = [5,3,7,2,4,1,8]
+    nums = [1,3,2,3,1]
     merge_sort(nums)
     print(nixushu)

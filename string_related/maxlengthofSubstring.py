@@ -7,7 +7,7 @@ def maxlengthofSubstring(s):
     if s is None or len(s) == 0:
         return 0
     for i in range(len(s)):
-        if (s[i] in dic and dic[s[i]] > start):
+        if (s[i] in dic and dic[s[i]] >= start):
             start = dic[s[i]] + 1
             print("start",start)
         flag_len = i - start + 1

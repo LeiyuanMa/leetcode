@@ -21,8 +21,8 @@ dp[i][j]表示的为空字符串和另外一个字符串的匹配，这样 dp[i]
 与 ② ac 和 bc 的最长公共子序列长度1 的最大值，即 1。
 综上状态转移方程为：
 
-dp[i][j] = dp[i - 1][j - 1] + 1dp[i][j]=dp[i−1][j−1]+1, 当 text1[i - 1] == text2[j - 1];text1[i−1]==text2[j−1];
-dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])dp[i][j]=max(dp[i−1][j],dp[i][j−1]), 当 text1[i - 1] != text2[j - 1]text1[i−1]!=text2[j−1]
+dp[i][j] = dp[i - 1][j - 1] + 1, 当 text1[i - 1] == text2[j - 1];
+dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]), 当 text1[i - 1] != text2[j - 1]
 '''
 
 class Solution(object):

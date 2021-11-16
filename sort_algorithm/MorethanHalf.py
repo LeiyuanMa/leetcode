@@ -7,9 +7,11 @@ def function_partion(lists, left, right):
     # 划分函数处理部分
     key = lists[left]
     while left < right:
+        # 把小于key的数挪到左边
         while left < right and lists[right] >= key:
             right -= 1
         lists[left] = lists[right]
+        # 把大于key的数挪到右边
         while left < right and lists[left] <= key:
             left += 1
         lists[right] = lists[left]
@@ -30,7 +32,7 @@ def MorethanHalf(lists):
         else:
             left = index + 1
         index = function_partion(lists, left, right)
-    print(k)
+    print(k,lists)
     return lists[k]
 
 def GetLeastK(lists,k):
@@ -50,7 +52,7 @@ def GetLeastK(lists,k):
 
 
 
-# lists = [4,5,2,1,2,2,2,2,3]
-# print("思路(划分法):", MorethanHalf(lists))
-lists = [4,5,1,6,2,7,3,8]
-GetLeastK(lists,4)
+lists = [4,5,2,1,2,2,2,3]
+print("思路(划分法):", MorethanHalf(lists))
+# lists = [4,5,1,6,2,7,3,8]
+# GetLeastK(lists,4)

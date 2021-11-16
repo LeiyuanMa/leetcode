@@ -20,7 +20,35 @@ def nextGreatestLetter(letters, target):
             right = mid
     return letters[left]
 
+def lengthOfLIS(nums):
+    """
+    最长递增子序列
+    输入：nums = [10,9,2,5,3,7,101,18]
+    输出：4
+    解释：最长递增子序列是 [2,3,7,101]，因此长度为 4 。
+    """
+    size = len(nums)
+    if size == 1:
+        return size
+
+    ans = [nums[0]]
+    for n in nums[1:]:
+        # 严格递增
+        if n > ans[-1]:
+            ans.append(n)
+            continue
+
+        left, right = 0, len(ans)
+        while left < right:
+            mid = (left + right) // 2
+            if ans[mid] >= n:
+                right = mid
+            else:
+                left = mid + 1
+        ans[left] = n
+    return len(ans)
+
 if __name__ == "__main__":
     letters = ["c", "f", "j"]
     target = "a"
-    nextGreatestLetter(letters,target)
+    print(nextGreatestLetter(letters,target))

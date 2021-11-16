@@ -40,3 +40,17 @@ def isPalindrome(head):
 
     return True
 
+
+class Node(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+head = Node(1)
+t2 = Node(1)
+t3 = Node(2)
+t4 = Node(1)
+t3.next = t4
+t2.next = t3
+head.next = t2
+
+print(isPalindrome(head))

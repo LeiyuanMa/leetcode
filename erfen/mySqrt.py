@@ -14,6 +14,17 @@ def mySqrt(x):
     # return ans
 
 
+def myPow(x,n):
+    if n==0:
+        return 1
+    if n==1:
+        return x
+    if n%2==0:
+        return myPow(x*x,n//2)
+    else:
+        return myPow(x*x,n//2)*x
+
 
 if __name__ == "__main__":
-    print(mySqrt(16))
+    #print(mySqrt(16))
+    print(myPow(2,5))

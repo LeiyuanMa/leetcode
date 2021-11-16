@@ -23,7 +23,7 @@ class Solution:
                 self.stack1.append(self.stack2.pop())
             return out
 """
-用两个栈实现一个队列
+用两个队列实现一个栈
 参考https://www.cnblogs.com/shengguorui/p/11414676.html
 """
 class Solution:

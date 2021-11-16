@@ -1,3 +1,6 @@
+"""
+俩数之和，返回下标
+"""
 def twoSum(numbers, target):
     i = 0
     j = len(numbers) - 1

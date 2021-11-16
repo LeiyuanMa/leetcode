@@ -18,4 +18,4 @@ def countNumbersWithUniqueDigits(n):
     return res
 
 if __name__ == "__main__":
-    print(countNumbersWithUniqueDigits(2))
+    print(countNumbersWithUniqueDigits(3))

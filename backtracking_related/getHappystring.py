@@ -1,3 +1,9 @@
+"""
+长度为n的字符串中字典序第K小的开心字符串
+
+开心字符串，s[i+1]!=s[i], 仅包含a b c
+"""
+
 def getHappyString(n, k):
     res = []
 

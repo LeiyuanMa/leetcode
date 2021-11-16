@@ -35,13 +35,15 @@ def combinationSum(candidates, target):
     """
     def dfs(candidates, begin, path, res, target):
         if target == 0:
-            res.append(path)
+            res.append(path[:])
             return
 
         for index in range(begin,size):
             if candidates[index] > target:
                 continue
-            dfs(candidates, index, path + [candidates[index]], res, target - candidates[index])
+            path.append(candidates[index])
+            dfs(candidates, index, path, res, target - candidates[index])
+            path.pop()
 
     size = len(candidates)
     if size == 0:
@@ -86,7 +88,7 @@ def combinationSum3(target, k):
     :param target:
     :return:
     """
-    def dfs(candidates, begin, size, path, res, target):
+    def dfs(candidates, begin, path, target):
         if target == 0 and len(path)==k:
             res.append(path)
             return
@@ -94,7 +96,7 @@ def combinationSum3(target, k):
         for index in range(begin, size):
             if candidates[index] > target:
                 continue
-            dfs(candidates, index+1, size, path + [candidates[index]], res, target - candidates[index])
+            dfs(candidates, index+1,  path + [candidates[index]], target - candidates[index])
 
     candidates = [i for i in range(1, 9 + 1)]
     size = len(candidates)
@@ -102,13 +104,13 @@ def combinationSum3(target, k):
     path = []
     res = []
     candidates.sort()
-    dfs(candidates, 0, size, path, res, target)
+    dfs(candidates, 0, path, target)
     return res
 
-print(combine(3, 2))
+# print(combine(3, 2))
 # print(combinationSum([2,3,6,7],7))
-# print(combinationSum2([10,1,2,7,6,1,5],8))
-# print(combinationSum3(9,3))
+# print(combinationSum2([2,5,2,1,2],5))
+print(combinationSum3(9,3))
 
 
 def subsets( nums):
@@ -124,4 +126,4 @@ def subsets( nums):
     backtrace(0, [])
     return result
 
-subsets([1,2,3])
+# subsets([1,2,3])
